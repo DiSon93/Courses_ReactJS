@@ -6,6 +6,81 @@
 html, body {
   font-family: 'Open Sans', sans-serif; }
 
+.carousel-control-prev {
+  position: absolute;
+  color: #007791;
+  top: 50%;
+  left: 2%;
+  height: 60px;
+  width: 60px;
+  line-height: 0 !important;
+  text-align: center;
+  border-radius: 50% !important;
+  border: 1px solid rgba(20, 23, 28, 0.05);
+  background-color: #29303b;
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+  z-index: 100; }
+  .carousel-control-prev .carousel-control-prev-icon {
+    color: #007791 !important;
+    height: 30px;
+    width: 30px; }
+  .carousel-control-prev span {
+    color: #007791;
+    font-size: 40px;
+    font-weight: normal; }
+  .carousel-control-prev:hover {
+    outline: none; }
+  .carousel-control-prev:focus {
+    outline: none; }
+
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  color: #007791;
+  height: 60px;
+  width: 60px;
+  line-height: 0 !important;
+  text-align: center;
+  border-radius: 50% !important;
+  border: 1px solid rgba(20, 23, 28, 0.05);
+  background-color: #29303b;
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+  z-index: 100; }
+  .carousel-control-next .carousel-control-next-icon {
+    color: #007791 !important;
+    height: 30px;
+    width: 30px; }
+  .carousel-control-next span {
+    color: #007791;
+    font-size: 40px;
+    font-weight: normal; }
+  .carousel-control-next:hover {
+    outline: none; }
+  .carousel-control-next:focus {
+    outline: none; }
+
+.courses .slick-dots {
+  color: black;
+  font-size: 270px;
+  bottom: -150px; }
+
+.courses .slick-next:before, .courses .slick-prev:before {
+  color: gray;
+  font-size: 60px; }
+
+.courses .slick-next {
+  right: 10px; }
+
+.courses .slick-prev {
+  left: -45px; }
+
+.courses .slick-slide {
+  padding: 0 15px; }
+
+.courses .slick-list {
+  margin: 0 2em; }
+
 .header-logo img {
   width: 140px; }
 
@@ -19,8 +94,9 @@ html, body {
     height: 600px; }
   .carousel-inner .carousel-info {
     position: absolute;
-    left: 50px;
-    top: 120px; }
+    left: 120px;
+    top: 140px;
+    width: 600px; }
     .carousel-inner .carousel-info button {
       background-color: #992337;
       border: 1px solid #fff;
@@ -79,16 +155,22 @@ html, body {
       border-top: 3px solid yellow; }
 
 .courses {
-  padding: 30px 0; }
+  padding: 30px 0;
+  margin-bottom: 100px;
+  margin-top: 10px; }
   .courses .courses__title {
-    margin-left: 10px; }
+    margin-left: 10px;
+    width: 85%;
+    margin: 0 auto; }
   .courses .courses__list .nav-tabs {
     border-bottom: none;
     display: flex;
     font-weight: 600;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    width: 85%;
+    margin: 0 auto; }
     .courses .courses__list .nav-tabs .nav-item {
-      margin: 10px 10px 10px 10px;
+      margin: 10px 10px 10px 10px !important;
       margin-bottom: 0; }
       .courses .courses__list .nav-tabs .nav-item .nav-link {
         color: gray;
@@ -101,19 +183,22 @@ html, body {
         background-color: #cfcfeb;
         margin-bottom: 0; }
   .courses .courses__card {
-    height: 930px;
-    overflow: hidden;
     width: 90%;
     margin: 0 auto; }
     .courses .courses__card .courses__items img {
       width: 100%;
-      height: 100%; }
+      height: 300px; }
+    .courses .courses__card .courses__items .score {
+      color: #007791; }
+    .courses .courses__card .courses__items .danhGia {
+      color: red; }
+    .courses .courses__card .courses__items i {
+      color: yellowgreen; }
   .courses .courses__status {
     background-color: #cfcfeb;
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding: 20px 0;
-    margin-left: 10px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px 0;
     justify-content: space-between; }
     .courses .courses__status img {
       width: 120px;
@@ -125,11 +210,15 @@ html, body {
 .students {
   padding-bottom: 30px; }
   .students .students__title {
-    margin-left: 10px; }
+    margin-left: 10px;
+    width: 90%;
+    margin: 0 auto; }
   .students .students__list .nav-tabs {
     border-bottom: none;
     display: flex;
-    font-weight: 600; }
+    font-weight: 600;
+    width: 90%;
+    margin: 0 auto; }
     .students .students__list .nav-tabs .nav-item {
       margin: 10px 10px 10px 10px; }
       .students .students__list .nav-tabs .nav-item .nav-link {
@@ -327,3 +416,119 @@ html, body {
       margin-right: 40px;
       text-decoration: none;
       color: #fff; }
+
+.login__body {
+  background-image: url(https://wallpapertag.com/wallpaper/full/c/a/a/157415-simplistic-wallpapers-1920x1080-lockscreen.jpg);
+  padding-bottom: 100px; }
+
+#login-name {
+  font-size: 65px;
+  font-family: arabic typesetting;
+  border-bottom-style: ridge;
+  color: white; }
+
+#login {
+  background-color: rgba(13, 13, 13, 0.2);
+  min-height: 500px;
+  padding: 40px 80px 40px 80px;
+  box-shadow: -10px -10px 9px #33cc33;
+  width: 35%;
+  justify-content: center;
+  margin: 0 auto; }
+
+.user {
+  font-size: 29px;
+  font-family: arabic typesetting;
+  color: white; }
+
+#iconn {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  color: white; }
+
+#iconn1 {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  color: white; }
+
+#text1 {
+  border-radius: 0;
+  height: 40px; }
+
+#text2 {
+  border-radius: 0;
+  height: 40px; }
+
+.login-btn {
+  width: 50%;
+  float: left;
+  height: 40px;
+  font-size: 18px; }
+
+/* Coded with love by Mutiullah Samim */
+.register_form {
+  padding: 100px;
+  height: 100%;
+  background: #60a3bc !important;
+  width: 100%; }
+
+.user_card {
+  height: 600px;
+  width: 480px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #f39c12;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px; }
+
+.brand_logo_container {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: -75px;
+  border-radius: 50%;
+  background: #60a3bc;
+  padding: 10px;
+  text-align: center; }
+
+.brand_logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid white; }
+
+.form_container {
+  margin-top: 100px; }
+
+.login_btn {
+  width: 100%;
+  background: #c0392b !important;
+  color: white !important; }
+
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important; }
+
+.login_container {
+  padding: 0 1rem; }
+
+.input-group-text {
+  background: #c0392b !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important; }
+
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important; }
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #c0392b !important; }

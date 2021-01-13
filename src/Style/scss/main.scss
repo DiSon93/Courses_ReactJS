@@ -6,7 +6,7 @@
 
 //Base
 @import'./Base/reset';
-// @import'./Base/nomalize';
+@import'./Base/nomalize';
 // @import'./Base/customize';
 
 //Components
@@ -34,6 +34,9 @@
 @import './Layouts/footer';
 //Page
 //chỉ code riêng cho 
+
+@import './Layouts/login';
+@import './Layouts/register';
 
 
 //Theme

@@ -16,6 +16,7 @@ export default class Carousel extends Component {
                         <div className="carousel-info">
                             <h2>Unleash Your Learning Online</h2>
                             <p>Futureproof your business with sustainable, scalable online learning. More than just an authoring platform.</p>
+                            <p>Book a Tailored Demo and start your Free Trial Today.</p>
                             <button>Take a course</button>
                         </div>
                     </div>
@@ -24,6 +25,7 @@ export default class Carousel extends Component {
                         <div className="carousel-info">
                             <h2>Unleash Your Learning Online</h2>
                             <p>Futureproof your business with sustainable, scalable online learning. More than just an authoring platform.</p>
+                            <p>Book a Tailored Demo and start your Free Trial Today.</p>
                             <button>Take a course</button>
                         </div>
                     </div>
@@ -32,6 +34,7 @@ export default class Carousel extends Component {
                         <div className="carousel-info">
                             <h2>Unleash Your Learning Online</h2>
                             <p>Futureproof your business with sustainable, scalable online learning. More than just an authoring platform.</p>
+                            <p>Book a Tailored Demo and start your Free Trial Today.</p>
                             <button>Take a course</button>
                         </div>
                     </div>

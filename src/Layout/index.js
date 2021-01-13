@@ -16,7 +16,7 @@ export default class Layout extends Component {
     render() {
         return (
             <div>
-                <Header />
+                {/* <Header /> */}
                 <Carousel />
                 <Partner />
                 <Products />
@@ -27,7 +27,7 @@ export default class Layout extends Component {
                 <Topcategogies />
                 <Comment />
                 <Trategy />
-                <Footer />
+                {/* <Footer /> */}
 
             </div>
 
