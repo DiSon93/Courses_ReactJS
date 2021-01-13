@@ -1,30 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { getCourseList } from '../redux/actions/useAPICourses';
+import { getCourseInItem } from '../redux/actions/courseItems';
 import Slider from "react-slick";
 
 
 export default function Courses() {
-    const { courseList, loading, error } = useSelector((state) => state.courseReducer);
+    const { courseItem, loading, error } = useSelector((state) => state.courseItemReducer);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
 
-        dispatch(getCourseList())
-        console.log(courseList)
+        dispatch(getCourseInItem("FrontEnd"))
+        // console.log(courseList)
     }, []);
+
+    const handleChange = (value) => {
+        dispatch(getCourseInItem(value))
+    }
 
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
         slickGoTo: true,
         centerPadding: 30
-      }; 
+    };
 
     return (
 
@@ -37,14 +41,23 @@ export default function Courses() {
 
             <div className="courses__list">
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={() => handleChange("FrontEnd")}>
                         <a className="nav-link active" id="fronEnd-tab" data-toggle="tab" href="#fronEnd" role="tab" aria-controls="fronEnd" aria-selected="true">Front End</a>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={() => handleChange("BackEnd")}>
                         <a className="nav-link" id="backEnd-tab" data-toggle="tab" href="#backEnd" role="tab" aria-controls="backEnd" aria-selected="false">Back End</a>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={() => handleChange("FullStack")}>
                         <a className="nav-link" id="fullStack-tab" data-toggle="tab" href="#fullStack" role="tab" aria-controls="fullStack" aria-selected="false">Full Stack</a>
+                    </li>
+                    <li className="nav-item" onClick={() => handleChange("Design")}>
+                        <a className="nav-link" id="fullStack-tab" data-toggle="tab" href="#fullStack" role="tab" aria-controls="fullStack" aria-selected="false">Design</a>
+                    </li>
+                    <li className="nav-item" onClick={() => handleChange("DiDong")}>
+                        <a className="nav-link" id="fullStack-tab" data-toggle="tab" href="#fullStack" role="tab" aria-controls="fullStack" aria-selected="false">Di động</a>
+                    </li>
+                    <li className="nav-item" onClick={() => handleChange("FullStack")}>
+                        <a className="nav-link" id="fullStack-tab" data-toggle="tab" href="#fullStack" role="tab" aria-controls="fullStack" aria-selected="false">Tư duy</a>
                     </li>
                 </ul>
                 <div className="tab-content" id="myTabContent">
@@ -56,10 +69,10 @@ export default function Courses() {
                                 <img src="img/prettyGirl.jpg" alt="" />
                             </div>
 
-  
+
                             <Slider  {...settings} className="row courses__card mt-3"  >
-                                {courseList.map((item) => {
-                                  let courseID = `/courses/${item.maKhoaHoc}`
+                                {courseItem.map((item) => {
+                                    let courseID = `/courses/${item.maKhoaHoc}`
                                     return <div key={item.maKhoaHoc} className="courses__items mr-3">
                                         <a className="card" href={courseID}>
                                             <img src={item.hinhAnh} alt="course" className="card-image-top" />
@@ -94,12 +107,12 @@ export default function Courses() {
                                 <img src="img/prettyGirl2.jpg" alt="" />
                             </div>
                             <Slider  {...settings} className="row courses__card mt-3"  >
-                                {courseList.map((item) => {
-
+                                {courseItem.map((item) => {
+                                    let courseID = `/courses/${item.maKhoaHoc}`
                                     return <div key={item.maKhoaHoc} className="courses__items mr-3">
-                                        <div className="card">
+                                        <a className="card" href={courseID}>
                                             <img src={item.hinhAnh} alt="course" className="card-image-top" />
-                                        </div>
+                                        </a>
                                         <div className="card-body mt-0">
                                             <h4 className="card-title">{item.tenKhoaHoc}</h4>
                                             <p className="card-text">Giáo viên: {item.nguoiTao.hoTen}</p>
@@ -118,6 +131,8 @@ export default function Courses() {
                             </Slider>
                         </div>
                     </div>
+
+                   
                     <div className="tab-pane fade" id="fullStack" role="tabpanel" aria-labelledby="fullStack-tab"> <div className="container-fluid">
                         <div className="coursess">
                             <div className="courses__status d-flex">
@@ -126,12 +141,12 @@ export default function Courses() {
                                 <img src="img/prettyBoy.jpg" alt="" />
                             </div>
                             <Slider  {...settings} className="row courses__card mt-3"  >
-                                {courseList.map((item) => {
-
+                                {courseItem.map((item) => {
+                                    let courseID = `/courses/${item.maKhoaHoc}`
                                     return <div key={item.maKhoaHoc} className="courses__items mr-3">
-                                        <div className="card">
+                                        <a className="card" href={courseID}>
                                             <img src={item.hinhAnh} alt="course" className="card-image-top" />
-                                        </div>
+                                        </a>
                                         <div className="card-body mt-0">
                                             <h4 className="card-title">{item.tenKhoaHoc}</h4>
                                             <p className="card-text">Giáo viên: {item.nguoiTao.hoTen}</p>
@@ -150,6 +165,9 @@ export default function Courses() {
                             </Slider>
                         </div>
                     </div>
+                    
+
+
                     </div>
                 </div>
             </div>

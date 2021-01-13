@@ -17,22 +17,29 @@ export default function CoursesDetail() {
         dispatch(getCourseList())
         console.log("Hi")
         // setCourseDetail(courseFilter);
-    },[])
-    const courseDetail = courseList.filter((item, index) => {
+    }, [])
+    let courseDetail = courseList.filter((item, index) => {
         return item.maKhoaHoc == courseID;
     })
- 
+
     console.log(courseList);
     console.log(courseDetail)
+   
 
     return (
-        <div className="container">
-           <div className="row">
-               <h1>{courseDetail.tenKhoaHoc}</h1>
-               <img src={courseDetail.hinhAnh} alt=""/>
-               <p>{courseDetail.moTa}</p>
-               <p>Lượt xem: {courseDetail.luotXem}</p>
-           </div>
+        <div className="container d-flex" style={{justifyContent: "center"}}>
+            <div className="row">
+                {courseDetail.map((item) => {
+                    return <div key={item.maKhoaHoc}>
+                        <h1>{item.tenKhoaHoc}</h1>
+                        <img src={item.hinhAnh} alt="" />
+                        <p>{item.moTa}</p>
+                        <p>Lượt xem: {item.luotXem}</p>
+                        <span>Giảng viên: {item.nguoiTao.hoTen}</span>
+                    </div>
+                })}
+
+            </div>
         </div>
     )
 }

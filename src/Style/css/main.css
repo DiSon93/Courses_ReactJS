@@ -87,6 +87,11 @@ html, body {
 .header-item {
   background-color: #cfcfeb; }
 
+.nav-item {
+  margin-right: 30px;
+  font-weight: 700;
+  font-size: 16px; }
+
 .carousel-inner {
   display: flex;
   position: relative; }
@@ -532,3 +537,12 @@ html, body {
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #c0392b !important; }
+
+.admin_management {
+  color: green;
+  padding-bottom: 30px; }
+  .admin_management li {
+    margin-top: 10px; }
+    .admin_management li a {
+      text-decoration: none;
+      color: green; }

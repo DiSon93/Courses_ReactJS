@@ -38,10 +38,11 @@ export default function Students() {
                         <div className="studentss">
                             <div className="row student__card">
                                 {courseList.map((item) => {
+                                    let courseID = `/courses/${item.maKhoaHoc}`
                                     return <div key={item.maKhoaHoc} className="col-sm-3 student__items">
-                                        <div className="card">
+                                        <a className="card" href={courseID}>
                                             <img src={item.hinhAnh} alt="course" className="card-image-top" />
-                                        </div>
+                                        </a>
                                         <div className="card-body">
                                             <h4 className="card-title">{item.tenKhoaHoc}</h4>
                                             <p className="card-text"> {item.moTa}</p>
@@ -49,49 +50,49 @@ export default function Students() {
                                     </div>
                                 })}
                             </div>
+                    </div>
+                </div>
+                <div className="tab-pane fade" id="backEnd_students" role="tabpanel" aria-labelledby="backEnd-tab">
+                    <div className="studentss">
+                        <div className="row student__card">
+                            {courseList.map((item) => {
+                                let courseID = `/courses/${item.maKhoaHoc}`
+                                return <div key={item.maKhoaHoc} className="col-sm-3 student__items">
+                                    <a className="card" href={courseID}>
+                                        <img src={item.hinhAnh} alt="course" className="card-image-top" />
+                                    </a>
+                                    <div className="card-body">
+                                        <h4 className="card-title">{item.tenKhoaHoc}</h4>
+                                        <p className="card-text"> {item.moTa}</p>
+                                    </div>
+                                </div>
+
+                            })}
                         </div>
                     </div>
-                    <div className="tab-pane fade" id="backEnd_students" role="tabpanel" aria-labelledby="backEnd-tab">
-                        <div className="studentss">
-                            <div className="row student__card">
-                                {courseList.map((item) => {
-
-                                    return <div key={item.maKhoaHoc} className="col-sm-3 student__items">
-                                        <div className="card">
-                                            <img src={item.hinhAnh} alt="course" className="card-image-top" />
-                                        </div>
-                                        <div className="card-body">
-                                            <h4 className="card-title">{item.tenKhoaHoc}</h4>
-                                            <p className="card-text"> {item.moTa}</p>
-                                        </div>
+                </div>
+                <div className="tab-pane fade" id="fullStack_students" role="tabpanel" aria-labelledby="fullStack-tab">
+                    <div className="studentss">
+                        <div className="row student__card">
+                            {courseList.map((item) => {
+                                let courseID = `/courses/${item.maKhoaHoc}`
+                                return <div key={item.maKhoaHoc} className="col-sm-3 student__items">
+                                    <a className="card" href={courseID}>
+                                        <img src={item.hinhAnh} alt="course" className="card-image-top" />
+                                    </a>
+                                    <div className="card-body">
+                                        <h4 className="card-title">{item.tenKhoaHoc}</h4>
+                                        <p className="card-text"> {item.moTa}</p>
                                     </div>
+                                </div>
 
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="tab-pane fade" id="fullStack_students" role="tabpanel" aria-labelledby="fullStack-tab">
-                        <div className="studentss">
-                            <div className="row student__card">
-                                {courseList.map((item) => {
-
-                                    return <div key={item.maKhoaHoc} className="col-sm-3 student__items">
-                                        <div className="card">
-                                            <img src={item.hinhAnh} alt="course" className="card-image-top" />
-                                        </div>
-                                        <div className="card-body">
-                                            <h4 className="card-title">{item.tenKhoaHoc}</h4>
-                                            <p className="card-text"> {item.moTa}</p>
-                                        </div>
-                                    </div>
-
-                                })}
-                            </div>
+                            })}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div >
     )
 
 }

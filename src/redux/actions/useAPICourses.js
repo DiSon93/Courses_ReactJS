@@ -13,7 +13,7 @@ export const getCourseList = () => {
 
         axiosClient.get("QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01")
         .then((result) => {
-            // console.log("Kiểm tra lại")
+            console.log("Kiểm tra lại")
             dispatch({
                 type: GET_COURSE_LIST_SUCCESS,
                 payload: {data: result.data}
