@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosClient = axios.create({
-    baseURL: "https://elearning0706.cybersoft.edu.vn/api",
+    baseURL: "https://elearning0706.cybersoft.edu.vn/api"
 
 })
 //Tự động thêm authorization vào headers nếu có accexxToken

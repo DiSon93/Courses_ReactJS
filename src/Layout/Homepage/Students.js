@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { getCourseList } from '../redux/actions/useAPICourses'
+import { getCourseList } from '../../redux/actions/useAPICourses'
 
 export default function Students() {
     const { courseList, loading, error } = useSelector((state) => state.courseReducer);

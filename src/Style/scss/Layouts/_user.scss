@@ -1,0 +1,49 @@
+.userPage{
+    margin: 0 auto;
+    width: 60%;
+    height: 660px;
+    background-color: rgba(0, 0, 0, 0.300);
+    padding-left: 50px;
+    
+    h1{
+        color: $color-white-cream;
+        margin-bottom: 40px;
+        padding-top: 100px;
+
+    }
+    a{
+        text-decoration: none;
+        color: $color-white-cream;
+        line-height: 50px;
+        font-size: 20px;
+        &:hover {
+            color: $color-gray-5;
+            font-size: 25px;
+        }
+    }
+}
+.userAccount{
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: white;
+    h1{
+        color: $color-blue;
+    }
+    .myAccounct{
+        width: 40%;
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+        background-color: $color-red-0;
+
+    }
+}
+.form_DangKyKhoaHoc{
+    height: 500px;
+    background-color: $color-background2;
+    .form-group{
+        width: 40%;
+    }
+}

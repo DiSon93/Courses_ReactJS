@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { registerIntoServer } from '../redux/actions/register'
+import { registerIntoServer } from '../../redux/actions/register'
 import { Redirect } from 'react-router-dom'
 
 
@@ -15,6 +15,7 @@ export default function Register() {
     const [soDT, setSoDT ] =  useState("");
     const [maNhom, setMaNhom ] = useState("");
     const [email , setEmail ] =  useState("");
+    const [maLoaiNguoiDung , setMaLoaiNguoiDung ] =  useState("");
 
     const user = { 
         taiKhoan : taiKhoan, 
@@ -23,6 +24,7 @@ export default function Register() {
         soDT,
         maNhom,
         email,
+        // maLoaiNguoiDung,
      }
   
     const register = (user) => {
@@ -30,14 +32,18 @@ export default function Register() {
         console.log(user)
         dispatch(registerIntoServer(user));
     }
-    useEffect(() => {
-        console.log(error);
-        console.log(userRegister)
-        if (userRegister) {
-            return <Redirect to="/" />;
-        }
+    // useEffect(() => {
+    //     console.log(error);
+    //     console.log(userRegister)
+    //     if (userRegister) {
+    //         return <Redirect to="/" />;
+    //     }
     
-    })
+    // })
+
+    if (userRegister) {
+                return <Redirect to="/" />;
+            }
 
     return (
         <div className="container-fluid register_form">
@@ -84,8 +90,14 @@ export default function Register() {
                                 <div className="input-group-append">
                                     <span className="input-group-text"><i className="fas fa-user" /></span>
                                 </div>
+                                <input type="text" name className="form-control input_user" placeholder="GP01" onChange={(evt) =>setMaNhom(evt.target.value) }/>
+                            </div>
+                            <div className="input-group mb-3">
+                                <div className="input-group-append">
+                                    <span className="input-group-text"><i className="fas fa-user" /></span>
+                                </div>
                                 {/* <input type="text" name className="form-control input_user" placeholder="maLoaiNguoiDung" /> */}
-                                <select  className="form-control input_user" name="maLoaiNguoiDung" id="" onChange={(evt) => setMaNhom(evt.target.value)}>
+                                <select  className="form-control input_user" name="maLoaiNguoiDung" id="" onChange={(evt) => setMaLoaiNguoiDung(evt.target.value)}>
                                     <option value="">----Ma Loai Nguoi Dung---</option>
                                     <option value="GV">GV</option>
                                     <option value="HV">HV</option>

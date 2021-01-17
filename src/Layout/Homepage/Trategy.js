@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 
-export default class Trategy extends Component {
-    render() {
+
+export default function Trategy () {
+    // render() {
         return (
             <div className="strategy">
                 <h1>Guiding your knowlege</h1>
@@ -24,9 +26,11 @@ export default class Trategy extends Component {
                 </div>
                 <div className="let__contact">
                     <h5>Vậy tại sao bạn không đăng ký ngay khóa học của chúng tôi nhỉ?</h5>
-                    <button className="btn btn-success">Đăng ký</button>
+                    <Button variant="contained" color="primary">Primary</Button>
                 </div>
+            
             </div>
         )
-    }
+    // }
 }
+   

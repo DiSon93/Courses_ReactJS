@@ -103,11 +103,10 @@ html, body {
     top: 140px;
     width: 600px; }
     .carousel-inner .carousel-info button {
-      background-color: #992337;
-      border: 1px solid #fff;
-      border-radius: 10px;
-      padding: 15px 15px;
-      color: #fff; }
+      padding: 10px; }
+      .carousel-inner .carousel-info button:focus {
+        border: none;
+        outline: none; }
 
 .partner-list {
   display: flex;
@@ -546,3 +545,47 @@ html, body {
     .admin_management li a {
       text-decoration: none;
       color: green; }
+  .admin_management .course_management {
+    width: 30%; }
+  .admin_management .user_management {
+    width: 30%; }
+
+.userPage {
+  margin: 0 auto;
+  width: 60%;
+  height: 660px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding-left: 50px; }
+  .userPage h1 {
+    color: #f2f3f5;
+    margin-bottom: 40px;
+    padding-top: 100px; }
+  .userPage a {
+    text-decoration: none;
+    color: #f2f3f5;
+    line-height: 50px;
+    font-size: 20px; }
+    .userPage a:hover {
+      color: #F7F8FA;
+      font-size: 25px; }
+
+.userAccount {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: white; }
+  .userAccount h1 {
+    color: #007791; }
+  .userAccount .myAccounct {
+    width: 40%;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    background-color: #ec5252; }
+
+.form_DangKyKhoaHoc {
+  height: 500px;
+  background-color: #e9e7e7; }
+  .form_DangKyKhoaHoc .form-group {
+    width: 40%; }

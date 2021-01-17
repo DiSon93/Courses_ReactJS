@@ -8,7 +8,7 @@ export default function AdminManagement() {
             <div className="course_management col-sm-5">
                 <h2>Course Management</h2>
                 <ul>
-                    <li><a href="">Thêm khóa học</a></li>
+                    <li><a href="/admin/addCourse">Thêm khóa học</a></li>
                     <li><a href="">Cập nhật khóa học</a></li>
                     <li><a href="">Lấy thông tin học viên khóa học</a></li>
                     <li><a href="">Xóa khóa học</a></li>
@@ -28,8 +28,8 @@ export default function AdminManagement() {
                 <h2>User Management</h2>
                 <ul>
                     <li><a href="">Lấy thông tin người dùng</a></li>
-                    <li><a href="">Lấy danh sach người dùng</a></li>
-                    <li><a href="">Lấy danh sánh người dùng _ Phân trang</a></li>
+                    <li><a href="">Lấy danh sách người dùng</a></li>
+                    <li><a href="">Lấy danh sách người dùng _ Phân trang</a></li>
                     <li><a href="">Tìm kiếm người dùng</a></li>
                     <li><a href="">Thông tin tài khoản</a></li>
                     <li><a href="">Thêm người dùng</a></li>

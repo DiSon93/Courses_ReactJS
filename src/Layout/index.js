@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Carousel from './Carousel';
-import Partner from './Partner';
-import Products from './Products';
-import Courses from './Courses';
-import Students from './Students';
-import Teachers from './Teachers';
-import DigitalData from './DigitalData';
-import Topcategogies from './Topcategogies';
-import Comment from './Comment';
-import Trategy from './Trategy';
-import Footer from './Footer'
+import Header from './Homepage/Header';
+import Carousel from './Homepage/Carousel';
+import Partner from './Homepage/Partner';
+import Products from './Homepage/Products';
+import Courses from './Homepage/Courses';
+import Students from './Homepage/Students';
+import Teachers from './Homepage/Teachers';
+import DigitalData from './Homepage/DigitalData';
+import Topcategogies from './Homepage/Topcategogies';
+import Comment from './Homepage/Comment';
+import Trategy from './Homepage/Trategy';
+import Footer from './Homepage/Footer'
 
 export default class Layout extends Component {
     render() {

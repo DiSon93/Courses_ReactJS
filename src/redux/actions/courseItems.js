@@ -18,7 +18,7 @@ export const getCourseInItem = (value) => {
         .catch((error) => {
             dispatch({
                 type: GET_COURSE_ITEM_FAIL,
-                payload: {error: error.respose.data}
+                payload: {error: error.response.data }
             })
         })
     }

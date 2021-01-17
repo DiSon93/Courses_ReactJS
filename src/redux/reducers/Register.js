@@ -1,9 +1,9 @@
 import { REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAIL } from '../constants/register';
 
-const userRegister = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
+// const userRegister = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
 
 const initialState = {
-    userRegister: userRegister,
+    userRegister: "",
     loading: false,
     error: null
 }
@@ -17,7 +17,7 @@ const registerReducer = (state = initialState, action) => {
         };
         case REGISTER_SUCCESS :{
             // state.currentUser = action.data
-            return {...state, userRegister: action.payload.data, loading: false}
+            return {... state, userRegister: action.payload.data, loading: false}
         };
         case REGISTER_FAIL :{
             console.log(action.payload.error)

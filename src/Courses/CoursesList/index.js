@@ -1,9 +1,31 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getCourseList } from '../../redux/actions/useAPICourses';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
+const useStyles = makeStyles({
+  root: {
+    width: 245,
+    height: 400,
+    margin: 20,
+
+    
+  },
+  media: {
+    height: 140,
+  },
+});
 
 
 export default function CoursesList() {
+    const classes = useStyles();
     const { courseList, loading, error } = useSelector((state) => state.courseReducer);
 
     const dispatch = useDispatch();
@@ -19,15 +41,30 @@ export default function CoursesList() {
         <div className="container mt-3">
             <div className="row">
                 {courseList.map((item) => {
-                    return <div key={item.maKhoaHoc} className="col-sm-4">
-                        <div className="card">
-                            <img style={{width: "100%", height: "300px" }} src={item.hinhAnh} alt="course" className = "card-image-top"/>
-                        </div>
-                        <div className="card-body">
-                            <h4 className="card-title">{item.tenKhoaHoc}</h4>
-                            <p className="card-text"> {item.moTa}</p>
-                        </div>
-                    </div>
+                    return  <Card className={classes.root}>
+                    <CardActionArea>
+                      <CardMedia
+                        className={classes.media}
+                        image={item.hinhAnh}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {item.tenKhoaHoc}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                         {item.moTa}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        Share
+                      </Button>
+                      <Button size="small" color="primary">
+                        Learn More
+                      </Button>
+                    </CardActions>
+                  </Card>
                 })}
             </div>
             

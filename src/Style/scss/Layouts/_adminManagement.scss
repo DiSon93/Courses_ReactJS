@@ -1,14 +1,19 @@
-.admin_management{
+.admin_management {
     color: green;
     padding-bottom: 30px;
+    // @include background("/img/banner.jpg");
 
-    li{
-margin-top: 10px;
-        a{
+    li {
+        margin-top: 10px;
+        a {
             text-decoration: none;
             color: green;
         }
-        
     }
-
+    .course_management {
+        width: 30%;
+    }
+    .user_management {
+        width: 30%;
+    }
 }

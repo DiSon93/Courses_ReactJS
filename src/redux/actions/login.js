@@ -7,15 +7,15 @@ import axiosClient from '../../ultils/axiosClient';
 import axios from 'axios'
 
 
-export const loginIntoServer = (values) => {
+export const loginIntoServer = (value) => {
     // console.log("Hello!!")
     return (dispatch) => {
         dispatch({ type: LOGIN_REQUEST });
 
-        axiosClient.post("QuanLyNguoiDung/DangNhap", values)
+        axiosClient.post("QuanLyNguoiDung/DangNhap", value)
             .then((result) => {
 
-                localStorage.setItem("user", JSON.stringtify(result.data));
+                localStorage.setItem("user", JSON.stringify(result.data));
                 console.log("TT");
                 dispatch({
                     type: LOGIN_SUCCESS,
