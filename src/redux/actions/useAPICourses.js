@@ -3,7 +3,7 @@ import {
     GET_COURSE_LIST_SUCCESS,
     GET_COURSE_LIST_FAIL
 } from '../constants/courses';
-import axiosClient from '../../ultils/axiosClient';
+import axiosClient from '../../utils/axiosClient';
 
 
 export const getCourseList = () => {

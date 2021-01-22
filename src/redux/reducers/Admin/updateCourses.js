@@ -1,25 +1,25 @@
-import { ADD_COURSES_REQUEST, ADD_COURSES_SUCCESS, ADD_COURSES_FAIL } from '../../constants/Admin/addCourses';
+import { UPDATE_COURSES_REQUEST, UPDATE_COURSES_SUCCESS, UPDATE_COURSES_FAIL } from '../../constants/Admin/updateCourses';
 
 // const currentUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
 
 const initialState = {
-    currentCourse: "",
+    updateCourse: "",
     loading: false,
     error: null
 }
 
-const addCoursesReducer = (state = initialState, action) => {
+const updateCourseReducer = (state = initialState, action) => {
     switch (action.type) {
-     case ADD_COURSES_REQUEST :{
+     case UPDATE_COURSES_REQUEST :{
             // state.currentUser = action.data,
             // state.loading = true
             return {...state, loading: true, error: null}
         };
-        case ADD_COURSES_SUCCESS :{
+        case UPDATE_COURSES_SUCCESS :{
             // state.currentUser = action.data
-            return {...state, currentUser: action.payload.data, loading: false}
+            return {...state, updateCourse: action.payload.data, loading: false}
         };
-        case ADD_COURSES_FAIL :{
+        case UPDATE_COURSES_FAIL :{
             console.log(action.payload.error)
             return {...state, loading: false, error: action.payload.error}
             
@@ -28,4 +28,4 @@ const addCoursesReducer = (state = initialState, action) => {
         return state;
     }
 }
-export default addCoursesReducer
+export default updateCourseReducer

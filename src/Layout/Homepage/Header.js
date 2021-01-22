@@ -1,6 +1,7 @@
 import React  from 'react';
 import { useSelector, useDispatch }from 'react-redux';
-import { userLogOut } from  '../../redux/actions/logOut'
+import { userLogOut } from  '../../redux/actions/User/logOut';
+import { Link, NavLink } from "react-router-dom"
 
 
 export default function Header () {
@@ -14,31 +15,31 @@ export default function Header () {
         return (
  <nav className="navbar navbar-expand-lg navbar-light header-item">
                 <div className="col-sm-4 header-logo">
-                    <a className="navbar-brand" href="/">
+                    <Link className="navbar-brand" to="/">
                         <img src="img/elucidat-logo.svg" alt="logo" />
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="collapse navbar-collapse col-sm-8" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/user">USER <span className="sr-only">(current)</span></a>
+                            <Link className="nav-link" to="/user">USER <span className="sr-only">(current)</span></Link>
                         </li>
                      
                         <li className="nav-item">
-                            <a className="nav-link" href="/admin/users">ADMIN</a>
+                            <Link className="nav-link" to="/admin/users">ADMIN</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/coursesList">ALL COURSES LIST</a>
+                            <Link className="nav-link" to="/coursesList">ALL COURSES LIST</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/customer">CUSTOMERS</a>
+                            <Link className="nav-link" to="/customer">CUSTOMERS</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/register">REGISTER</a>
+                            <Link className="nav-link" to="/register">REGISTER</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/login">LOG IN</a>
+                            <Link className="nav-link" to="/login">LOG IN</Link>
                         </li>
                         {/* <li className="nav-item">
                             <button className="nav-link" onClick={() => logOut("")}>LOG OUT</button>

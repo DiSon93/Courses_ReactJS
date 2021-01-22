@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCourseList } from '../../redux/actions/useAPICourses';
+import { getCourseList } from '../../../redux/actions/useAPICourses';
 
 export default function CoursesDetail() {
     const { courseList, loading, error } = useSelector(state => state.courseReducer);
@@ -10,6 +10,7 @@ export default function CoursesDetail() {
     var courseID = url.slice(9)
     console.log(courseID)
     console.log(url)
+    // console.log(window.match.params.courseID)
 
     const dispatch = useDispatch();
 

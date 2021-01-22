@@ -3,7 +3,7 @@ import {
     ITEMCOURSE_SUCCESS,
     ITEMCOURSE_FAIL
 } from '../../constants/User/getItemsOfCourse';
-import axiosClient from '../../../ultils/axiosClient';
+import axiosClient from '../../../utils/axiosClient';
 import axios from 'axios'
 
 

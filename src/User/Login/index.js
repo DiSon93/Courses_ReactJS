@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { loginIntoServer } from '../../redux/actions/login'
-import { Redirect } from 'react-router-dom'
+import { loginIntoServer } from '../../redux/actions/User/login'
+import { Redirect } from 'react-router-dom';
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as yup from 'yup';
+
+const signInSchema = yup.object().shape({
+    taiKhoan: yup.string().required(),
+    matKhau: yup.string().required(),
+})
 
 
 export default function Login() {
@@ -49,19 +56,32 @@ export default function Login() {
                 <center> <b id="login-name">LOGIN Here </b> </center>&gt;
                 <div className="row">
                     <div className="offset" id="login">
-                        <form>
+                        <Formik
+                        initialValues={{
+                            taiKhoan: "",
+                            matKhau: "",
+                        }}
+                        validationSchema={signInSchema}
+                        onSubmit={(values)=>{
+                            console.log(values)
+                            dispatch(loginIntoServer(values));
+                        }}
+                        >
+                        <Form>
                             <div className="form-group">
                                 <label className="user"> UserName</label>
                                 <div className="input-group">
                                     <span className="input-group-addon" id="iconn"> <i className="glyphicon glyphicon-user" /></span>
-                                    <input type="text" className="form-control" id="text1" name="taiKhoan" placeholder="username"  onChange={(evt) => setTaiKhoan(evt.target.value)} />
+                                    <Field type="text" className="form-control" id="text1" name="taiKhoan" placeholder="username"/>
+                                    <ErrorMessage name="taiKhoan" />
                                 </div>
                             </div>
                             <div className="form-group">
                                 <label className="user"> Password </label>
                                 <div className="input-group">
                                     <span className="input-group-addon" id="iconn1"> <i className="glyphicon glyphicon-lock" /></span>
-                                    <input type="text" className="form-control" id="text2" name="matKhau" placeholder=" Enter Password"  onChange={(evt) => setMatKhau(evt.target.value)} />
+                                    <Field type="text" className="form-control" id="text2" name="matKhau" placeholder=" Enter Password" />
+                                    <ErrorMessage name="matKhau" />
                                 </div>
                             </div>
                             <div className="form-group">
@@ -72,7 +92,7 @@ export default function Login() {
                             </div>
 
                             <div className="form-group">
-                                <button className="btn btn-success" style={{ borderRadius: 0, width: "50%", fontSize: "18px" }} onClick={() => login(user)}
+                                <button type="submit" className="btn btn-success" style={{ borderRadius: 0, width: "50%", fontSize: "18px" }}
                                     disabled={loading}
                                 >Login</button>
 
@@ -88,7 +108,9 @@ export default function Login() {
                             <a href="#" style={{ color: 'white', fontSize: 15, float: 'right', marginRight: 10 }}> Forget Password </a>
                             <a href="/register" style={{ color: 'white', fontSize: 15, float: 'right', marginRight: 10 }}> Register </a>
                             <span>Don't have an account?</span>
-                        </form>
+                        </Form>
+                        </Formik>
+ 
                     </div>
                 </div>
             </div>

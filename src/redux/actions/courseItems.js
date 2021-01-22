@@ -3,7 +3,7 @@ import {
     GET_COURSE_ITEM_SUCCESS,
     GET_COURSE_ITEM_FAIL
 } from '../constants/courses';
-import axiosClient from '../../ultils/axiosClient'; 
+import axiosClient from '../../utils/axiosClient'; 
 
 export const getCourseInItem = (value) => {
     return (dispatch) => {

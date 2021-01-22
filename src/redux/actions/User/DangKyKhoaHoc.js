@@ -3,7 +3,7 @@ import {
     SINGUP_SUCCESS,
     SINGUP_FAIL
 } from '../../constants/User/DangKyKhoaHoc';
-import axiosClient from '../../../ultils/axiosClient';
+import axiosClient from '../../../utils/axiosClient';
 import axios from 'axios'
 
 

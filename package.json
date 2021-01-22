@@ -8,11 +8,9 @@
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
-<<<<<<< HEAD
-    "bootstrap": "^4.5.3",
-=======
     "axios": "^0.21.1",
->>>>>>> 38e99571b6f23c0453f8c6f3087bed80367973b3
+    "bootstrap": "^4.5.3",
+    "formik": "^2.2.6",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
@@ -24,7 +22,8 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.8"
   },
   "scripts": {
     "start": "react-scripts start",

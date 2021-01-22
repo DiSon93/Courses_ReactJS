@@ -9,9 +9,9 @@ export default function AdminManagement() {
                 <h2>Course Management</h2>
                 <ul>
                     <li><a href="/admin/addCourse">Thêm khóa học</a></li>
-                    <li><a href="">Cập nhật khóa học</a></li>
-                    <li><a href="">Lấy thông tin học viên khóa học</a></li>
-                    <li><a href="">Xóa khóa học</a></li>
+                    <li><a href="/admin/shownAllCourses">Cập nhật khóa học</a></li>
+                    <li><a href="/admin/shownAllCourses">Lấy thông tin học viên khóa học</a></li>
+                    <li><a href="/admin/shownAllCourses">Xóa khóa học</a></li>
                     <li><a href="">Ghi danh khóa học</a></li>
                     <li><a href="">Đăng ký khóa học</a></li>
                     <li><a href="">Hủy ghi danh</a></li>

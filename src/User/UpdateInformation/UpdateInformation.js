@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { userUpdateInf } from '../../redux/actions/User/userUpdate';
 import { Redirect } from 'react-router-dom';
-import { loginIntoServer } from '../../redux/actions/login'
+import { loginIntoServer } from '../../redux/actions/User/login'
 
 
 export default function UpdateInformation() {

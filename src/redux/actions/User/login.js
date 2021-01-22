@@ -2,8 +2,8 @@ import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAIL
-} from '../constants/login';
-import axiosClient from '../../ultils/axiosClient';
+} from '../../constants/login';
+import axiosClient from '../../../utils/axiosClient';
 import axios from 'axios'
 
 

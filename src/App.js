@@ -11,12 +11,12 @@ import Footer from './Layout/Homepage/Footer'
 import Layout from './Layout/index';
 import Login from './User/Login/index';
 import Register from './User/Register';
-import CoursesList from './Courses/CoursesList/index';
+import CoursesList from './Layout/Courses/CoursesList';
 import Customer from './Layout/Homepage/Comment';
 import AdminManagement from './Admin/AdminManagement';
 
 import AdminRoute from './guards/AdminRoute/index';
-import CoursesDetail from './Courses/CoursesDetail/index';
+import CoursesDetail from './Layout/Courses/CoursesDetail/index';
 import AddCourses from './Admin/QuanLyKhoaHoc/addCourses';
 
 import UserPage from './User/index';
@@ -25,7 +25,12 @@ import CourseSignUp from './User/DangKyKhoaHoc/dangKyKhoaHoc';
 import UserAccount from './User/ThongTinTaiKhoan/UserAccount';
 import UserDeleteCourses from './User/HuyGhiDanh/DeleteCourses';
 import UserUpdate from './User/UpdateInformation/UpdateInformation';
-import GetCoursesItem from './User/GetCourseItemAndDetail/getCoursesItem'
+import GetCoursesItem from './User/GetCourseItemAndDetail/getCoursesItem';
+
+
+import ShownAllCourses from './Admin/QuanLyKhoaHoc/shownAllCourses';
+import UpdateCourses from './Admin/QuanLyKhoaHoc/updateCourses';
+import TakeInfoOfStudent from './Admin/QuanLyKhoaHoc/takeInfoOfStudent';
 
 
 function App() {
@@ -33,8 +38,9 @@ function App() {
 
 
     <div>
-      <Header />
+    
       <BrowserRouter>
+      <Header />
         <Switch>
           <Route exact path={["/","/coursesList", "/customer", "/courses/:courseID"]}>
             <Switch>
@@ -57,10 +63,13 @@ function App() {
             </Switch>
           </Route>
 
-          <Route exact path={["/admin/users", "/admin/addCourse"]}>
+          <Route exact path={["/admin/users", "/admin/addCourse", "/admin/shownAllCourses", "/admin/updateCourses/:courseID","/admin/takeInfoOfStudent/:courseID"]}>
             <Switch>
               <AdminRoute exact path="/admin/users" component={AdminManagement} />
-              <Route exact path="/admin/addCourse" component={AddCourses} />
+              <AdminRoute exact path="/admin/addCourse" component={AddCourses} />
+              <AdminRoute exact path="/admin/shownAllCourses" component={ShownAllCourses} />
+              <AdminRoute exact path="/admin/updateCourses/:courseID" component={UpdateCourses} />
+              <AdminRoute exact path="/admin/takeInfoOfStudent/:courseID" component={TakeInfoOfStudent} />
 
 
             </Switch>
@@ -80,8 +89,9 @@ function App() {
             </Switch>
           </Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
-      <Footer />
+     
     </div>
 
   );

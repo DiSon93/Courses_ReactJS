@@ -1,25 +1,25 @@
-import { ADD_COURSES_REQUEST, ADD_COURSES_SUCCESS, ADD_COURSES_FAIL } from '../../constants/Admin/addCourses';
+import { DELETE_COURSES_REQUEST, DELETE_COURSES_SUCCESS, DELETE_COURSES_FAIL } from '../../constants/Admin/deleteCourses';
 
 // const currentUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
 
 const initialState = {
-    currentCourse: "",
+    deleteCourse: "",
     loading: false,
     error: null
 }
 
-const addCoursesReducer = (state = initialState, action) => {
+const deleteCoursesAdminReducer = (state = initialState, action) => {
     switch (action.type) {
-     case ADD_COURSES_REQUEST :{
+     case DELETE_COURSES_REQUEST :{
             // state.currentUser = action.data,
             // state.loading = true
             return {...state, loading: true, error: null}
         };
-        case ADD_COURSES_SUCCESS :{
+        case DELETE_COURSES_SUCCESS :{
             // state.currentUser = action.data
-            return {...state, currentUser: action.payload.data, loading: false}
+            return {...state, deleteCourse: action.payload.data, loading: false}
         };
-        case ADD_COURSES_FAIL :{
+        case DELETE_COURSES_FAIL :{
             console.log(action.payload.error)
             return {...state, loading: false, error: action.payload.error}
             
@@ -28,4 +28,4 @@ const addCoursesReducer = (state = initialState, action) => {
         return state;
     }
 }
-export default addCoursesReducer
+export default deleteCoursesAdminReducer

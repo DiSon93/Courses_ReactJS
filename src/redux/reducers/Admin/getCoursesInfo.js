@@ -1,25 +1,28 @@
-import { ADD_COURSES_REQUEST, ADD_COURSES_SUCCESS, ADD_COURSES_FAIL } from '../../constants/Admin/addCourses';
+import { GET_COURSES_INFO_REQUEST, GET_COURSES_INFO_SUCCESS, GET_COURSES_INFO_FAIL } from '../../constants/Admin/getCoursesInfo';
 
 // const currentUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
 
 const initialState = {
-    currentCourse: "",
+    currentCourseInfo: {
+        danhMucKhoaHoc: "",
+        nguoiTao: ""
+    },
     loading: false,
     error: null
 }
 
-const addCoursesReducer = (state = initialState, action) => {
+const getCourseInfoReducer = (state = initialState, action) => {
     switch (action.type) {
-     case ADD_COURSES_REQUEST :{
+     case GET_COURSES_INFO_REQUEST :{
             // state.currentUser = action.data,
             // state.loading = true
             return {...state, loading: true, error: null}
         };
-        case ADD_COURSES_SUCCESS :{
+        case GET_COURSES_INFO_SUCCESS :{
             // state.currentUser = action.data
-            return {...state, currentUser: action.payload.data, loading: false}
+            return {...state, currentCourseInfo: action.payload.data, loading: false}
         };
-        case ADD_COURSES_FAIL :{
+        case GET_COURSES_INFO_FAIL :{
             console.log(action.payload.error)
             return {...state, loading: false, error: action.payload.error}
             
@@ -28,4 +31,4 @@ const addCoursesReducer = (state = initialState, action) => {
         return state;
     }
 }
-export default addCoursesReducer
+export default getCourseInfoReducer

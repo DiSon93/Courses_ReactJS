@@ -3,7 +3,7 @@ import {
     USERUPDATE_SUCCESS,
     USERUPDATE_FAIL
 } from '../../constants/User/userUpdate';
-import axiosClient from '../../../ultils/axiosClient';
+import axiosClient from '../../../utils/axiosClient';
 import axios from 'axios'
 
 

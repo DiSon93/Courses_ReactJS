@@ -27,7 +27,8 @@ export default function Courses() {
         slidesToScroll: 1,
         autoplay: true,
         slickGoTo: true,
-        centerPadding: 30
+        centerPadding: 30,
+        // width: 200,  
     };
 
     return (

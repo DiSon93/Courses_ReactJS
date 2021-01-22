@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -8,19 +8,26 @@ import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
 import BeenhereIcon from '@material-ui/icons/Beenhere';
 
-const useStyle = makeStyles((theme) => ({
-    label: {
-        color: "#f00",
-
-    },
-    button: {
-        margin: theme.spacing(1),
-    },
-}));
 
 export default function Carousel() {
+    const [color, setColor] = useState('#f00')
+    const handleChange =(evt) => {
+        setColor(evt.target.value)
+    }
+    const useStyle = makeStyles((theme) => ({
+
+        label: {
+            color: color,
+
+        },
+        button: {
+            margin: theme.spacing(1), 
+        },
+    }));
+
 
     const classes = useStyle();
+
 
     // render() {
     return (
@@ -49,6 +56,12 @@ export default function Carousel() {
                             Talk
       </Button>
                         <BeenhereIcon color="primary" fontSize="large" />
+                        <select name="" id="" onChange={handleChange}>
+                            <option value="Red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="black">Black</option>
+                        </select>
+
                     </div>
                 </div>
                 <div className="carousel-item">

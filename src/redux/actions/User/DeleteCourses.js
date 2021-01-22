@@ -3,7 +3,7 @@ import {
     DELETECOURSE_SUCCESS,
     DELETECOURSE_FAIL
 } from '../../constants/User/DeleteCourses';
-import axiosClient from '../../../ultils/axiosClient';
+import axiosClient from '../../../utils/axiosClient';
 import axios from 'axios'
 
 

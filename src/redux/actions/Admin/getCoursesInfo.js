@@ -1,32 +1,32 @@
 import {
-    ADD_COURSES_REQUEST,
-    ADD_COURSES_SUCCESS,
-    ADD_COURSES_FAIL
-} from '../../constants/Admin/addCourses';
+    GET_COURSES_INFO_REQUEST,
+    GET_COURSES_INFO_SUCCESS,
+    GET_COURSES_INFO_FAIL
+} from '../../constants/Admin/getCoursesInfo';
 import axiosClient from '../../../utils/axiosClient';
 import axios from 'axios'
 
 
-export const addCourses = (values) => {
+export const getCoursesInfo = (values) => {
     console.log("Hello!!")
     return (dispatch) => {
-        dispatch({ type: ADD_COURSES_REQUEST });
+        dispatch({ type: GET_COURSES_INFO_REQUEST });
 
-        axiosClient.post("QuanLyKhoaHoc/ThemKhoaHoc", values)
+        axiosClient.get(`QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${values}`)
             .then((result) => {
                 console.log("Hi ANH")
 
                 // localStorage.setItem("user", JSON.stringify(result.data));
                 console.log("TT");
                 dispatch({
-                    type: ADD_COURSES_SUCCESS,
+                    type: GET_COURSES_INFO_SUCCESS,
                     payload: { data: result.data }
                 });
                 console.log(result.data);
             }).catch((error) => {
                 console.log("Hi EM")
                 dispatch({
-                    type: ADD_COURSES_FAIL,
+                    type: GET_COURSES_INFO_FAIL,
                     payload: {   error: error.response.data }
                 })
             })

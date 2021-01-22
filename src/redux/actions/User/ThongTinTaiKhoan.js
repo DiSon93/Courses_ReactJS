@@ -3,7 +3,7 @@ import {
     USERACCOUNT_SUCCESS,
     USERACCOUNT_FAIL
 } from '../../constants/User/ThongTinTaiKhoan';
-import axiosClient from '../../../ultils/axiosClient';
+import axiosClient from '../../../utils/axiosClient';
 import axios from 'axios'
 
 
