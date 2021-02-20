@@ -1,15 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addCourses } from '../../redux/actions/Admin/addCourses'
+import Button from '@material-ui/core/Button';
 import { Redirect } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { yupSchema } from '../../utils/yupSchema'
+import { yupSchema } from '../../utils/yupSchema';
+import  * as yup from 'yup'
+
+
+const CourseSignupSchema = yup.object().shape({
+    maKhoaHoc: yup.string().required(),
+    biDanh: yup.string().required(),
+    tenKhoaHoc: yup.string().required(),
+    moTa: yup.string().required().min(10,"Too Short!!"),
+    hinhAnh: yup.string().required(),
+    maNhom: yup.string().required(),
+    ngayTao: yup.string().required(),
+    maDanhMucKhoaHoc: yup.string().required(),  
+    taiKhoanNguoiTao: yup.string().required(),
+  });
+
 
 export default function AddCourses() {
 
     const { currentCourse, loading, error } = useSelector((state) => state.addCoursesReducer);
     const dispatch = useDispatch();
 
+    const [ hinhAnh, setHinhAnh ] =  useState('')
 
     if (currentCourse) {
         console.log(currentCourse)
@@ -36,7 +53,9 @@ export default function AddCourses() {
                             maDanhMucKhoaHoc: "",
                             taiKhoanNguoiTao: "",
                         }}
-                        validationSchema={yupSchema}
+                        
+                        validationSchema={CourseSignupSchema}
+                        
 
                         onSubmit={(values) => {
                             console.log(values)
@@ -79,7 +98,7 @@ export default function AddCourses() {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor>Hình ảnh</label>
-                                    <Field type="text" name="hinhAnh" id className="form-control" placeholder />
+                                    <Field type="file" name="hinhAnh" id className="form-control" placeholder/>
                                     <ErrorMessage name="hinhAnh" />
                                 </div>
                                 <div className="form-group">
@@ -104,8 +123,10 @@ export default function AddCourses() {
                                 </div>
 
                                 <div className="form-group">
-                                    <button type="submit" classname="btn btn-success">Thêm Khóa Học</button>
+                                    <Button  variant="contained" color="primary" type="submit" classname="btn btn-success">Thêm Khóa Học</Button>
+                             
                                 </div>
+                                {error? <div className="alert-alert-danger">{error}</div> : null}
 
                             </Form>
                         )}

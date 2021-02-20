@@ -90,7 +90,7 @@ html, body {
 .nav-item {
   margin-right: 30px;
   font-weight: 700;
-  font-size: 16px; }
+  font-size: 15px; }
 
 .carousel-inner {
   display: flex;
@@ -568,17 +568,22 @@ html, body {
     .userPage a:hover {
       color: #F7F8FA;
       font-size: 25px; }
+  .userPage Link {
+    text-decoration: none; }
 
 .userAccount {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   padding-top: 40px;
   padding-bottom: 40px;
-  color: white; }
+  color: white;
+  background-color: #60a3bc; }
   .userAccount h1 {
-    color: #007791; }
+    text-align: center;
+    color: #fff; }
   .userAccount .myAccounct {
     width: 40%;
+    margin: 0 auto;
     padding-top: 30px;
     padding-left: 30px;
     padding-bottom: 30px;
@@ -589,3 +594,15 @@ html, body {
   background-color: #e9e7e7; }
   .form_DangKyKhoaHoc .form-group {
     width: 40%; }
+
+.update__userInformation {
+  background-color: #60a3bc; }
+  .update__userInformation h1 {
+    color: #007791;
+    font-weight: 700; }
+
+.courseApply {
+  background-color: #60a3bc; }
+  .courseApply h1 {
+    color: #007791;
+    font-weight: 700; }

@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers';
 
-
+// import anime from 'animejs/lib/anime.es.js';
 
 const enhanceCompose = compose (
   applyMiddleware(thunk),

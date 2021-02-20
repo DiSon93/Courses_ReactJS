@@ -17,7 +17,7 @@ const addCoursesReducer = (state = initialState, action) => {
         };
         case ADD_COURSES_SUCCESS :{
             // state.currentUser = action.data
-            return {...state, currentUser: action.payload.data, loading: false}
+            return {...state, currentCourse: action.payload.data, loading: false}
         };
         case ADD_COURSES_FAIL :{
             console.log(action.payload.error)

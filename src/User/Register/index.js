@@ -3,9 +3,23 @@ import { useSelector, useDispatch } from 'react-redux';
 import { registerIntoServer } from '../../redux/actions/User/register'
 import { Redirect } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { yupSchema } from '../../utils/yupSchema'
+import { yupSchema } from '../../utils/yupSchema';
+import * as yup from 'yup';
 
-
+const SignupSchema = yup.object().shape({
+    taiKhoan: yup.string()
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+    matKhau: yup.string()
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+    email: yup.string().email('Invalid email').required('Required'),
+    hoTen: yup.string().required(),
+    soDT: yup.string().required().matches(/^[0-9]+$/),
+    maNhom: yup.string().required(),
+  });
 
 
 export default function Register() {
@@ -68,12 +82,14 @@ export default function Register() {
                                 maNhom: '',
                                 email: '',
                             }}
-                            validationSchema={yupSchema}
+                           
+                            validationSchema={SignupSchema}
 
-                            onSubmit={(values) => {
+                            onSubmit = {(values) => {
                                 console.log(values)
                                 dispatch(registerIntoServer(values));
                             }}
+                       
                         >
                             {({ isSubmitting }) => (
                                 <Form>
@@ -94,7 +110,7 @@ export default function Register() {
                                         <div className="input-group-append">
                                             <span className="input-group-text"><i className="fas fa-key" /></span>
                                         </div>
-                                        <Field type="password" name="matKhau" className="form-control input_pass" placeholder="password" />
+                                        <Field type="password" name="matKhau" className="form-control input_pass" placeholder="password"  />
                                         <ErrorMessage name="matKhau" />
                                     </div>
                                     <div className="input-group mb-3">
@@ -115,7 +131,7 @@ export default function Register() {
                                         <div className="input-group-append">
                                             <span className="input-group-text"><i className="fas fa-user" /></span>
                                         </div>
-                                        <Field type="text" name="soDT" className="form-control input_user" placeholder="soDT" />
+                                        <Field type="text" name="soDT" className="form-control input_user" placeholder="soDT"/>
                                         <ErrorMessage name="soDT" />
                                     </div>
                                     {/* <div className="input-group mb-3">
@@ -143,7 +159,7 @@ export default function Register() {
                                         </div>
                                     </div>
                                     <div className="d-flex justify-content-center mt-3 login_container">
-                                        <button type="submit" name="button" className="btn login_btn">Register</button>
+                                        <button type="submit" name="button"  disabled={isSubmitting} className="btn login_btn" >Register</button>
                                     </div>
                                     {error ? <div className="alert alert-danger">{error}</div> : null}
                                 </Form>

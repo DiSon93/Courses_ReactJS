@@ -32,22 +32,23 @@ import ShownAllCourses from './Admin/QuanLyKhoaHoc/shownAllCourses';
 import UpdateCourses from './Admin/QuanLyKhoaHoc/updateCourses';
 import TakeInfoOfStudent from './Admin/QuanLyKhoaHoc/takeInfoOfStudent';
 
+import ClippedDrawer from './User/index'
 
 function App() {
   return (
 
 
     <div>
-    
+
       <BrowserRouter>
-      <Header />
+        <Header />
         <Switch>
-          <Route exact path={["/","/coursesList", "/customer", "/courses/:courseID"]}>
+          <Route exact path={["/", "/coursesList", "/customer", "/courses/:courseID"]}>
             <Switch>
               <Route exact path="/" component={Layout} />
-              <Route exact path="/coursesList" component = {CoursesList}/>
-              <Route exact path="/customer" component = {Customer}/>
-              <Route exact path="/courses/:courseID" component = {CoursesDetail}/>
+              <Route exact path="/coursesList" component={CoursesList} />
+              <Route exact path="/customer" component={Customer} />
+              <Route exact path="/courses/:courseID" component={CoursesDetail} />
 
 
 
@@ -63,7 +64,7 @@ function App() {
             </Switch>
           </Route>
 
-          <Route exact path={["/admin/users", "/admin/addCourse", "/admin/shownAllCourses", "/admin/updateCourses/:courseID","/admin/takeInfoOfStudent/:courseID"]}>
+          <Route exact path={["/admin/users", "/admin/addCourse", "/admin/shownAllCourses", "/admin/updateCourses/:courseID", "/admin/takeInfoOfStudent/:courseID"]}>
             <Switch>
               <AdminRoute exact path="/admin/users" component={AdminManagement} />
               <AdminRoute exact path="/admin/addCourse" component={AddCourses} />
@@ -76,7 +77,9 @@ function App() {
           </Route>
 
           <Route exact path={["/user", "/user/CourseSignUp", "/user/userAccount", "/user/deleteCourses", "/user/userUpdate", "/user/ItemsAndCourses"]}>
-            <Switch>
+            {/* <ClippedDrawer class="col-3" /> */}
+            <Switch class="col-9">
+
               <Route exact path="/user" component={UserPage} />
               <Route exact path="/user/CourseSignUp" component={CourseSignUp} />
               <Route exact path="/user/userAccount" component={UserAccount} />
@@ -84,14 +87,12 @@ function App() {
               <Route exact path="/user/userUpdate" component={UserUpdate} />
               <Route exact path="/user/ItemsAndCourses" component={GetCoursesItem} />
 
-
-
             </Switch>
           </Route>
         </Switch>
         <Footer />
       </BrowserRouter>
-     
+
     </div>
 
   );

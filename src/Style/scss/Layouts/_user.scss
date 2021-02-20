@@ -1,3 +1,4 @@
+
 .userPage{
     margin: 0 auto;
     width: 60%;
@@ -21,18 +22,24 @@
             font-size: 25px;
         }
     }
+    Link{
+        text-decoration: none;
+    }
 }
 .userAccount{
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     padding-top: 40px;
     padding-bottom: 40px;
     color: white;
+    background-color: #60a3bc ;
     h1{
-        color: $color-blue;
+        text-align: center;
+        color: $color-white-0;
     }
     .myAccounct{
         width: 40%;
+        margin: 0 auto;
         padding-top: 30px;
         padding-left: 30px;
         padding-bottom: 30px;
@@ -45,5 +52,19 @@
     background-color: $color-background2;
     .form-group{
         width: 40%;
+    }
+}
+.update__userInformation{
+    background-color: #60a3bc ;
+    h1{
+        color: $color-blue;
+        font-weight: $fw-bold-1;
+    }
+}
+.courseApply{
+    background-color: #60a3bc ;
+    h1{
+        color: $color-blue;
+        font-weight: $fw-bold-1;
     }
 }

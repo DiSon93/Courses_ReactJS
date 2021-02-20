@@ -20,7 +20,7 @@ export default function UserAccount() {
     }, []);
     console.log(userAccount);
     return (
-        <div className="userAccount"  style={{ backgroundImage: "url(img/trainingcourseflyer.jpg)" }}>
+        <div className="userAccount">
             <h1 className="mb-4">Đây là trang thông tin cá nhân của tôi.</h1>
             <div className="myAccounct">
                 <p>Tài khoản: {currentUser.taiKhoan}</p>

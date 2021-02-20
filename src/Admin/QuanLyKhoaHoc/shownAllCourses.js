@@ -2,10 +2,9 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import { getCourseList } from '../../redux/actions/useAPICourses';
-import { deleteCourseAdmin } from '../../redux/actions/Admin/deleteCourses';
-import { Redirect } from 'react-router-dom';
-import DeleteCourses from './deleteCourses';
-import TakeInfoOfStudent from './takeInfoOfStudent'
+
+import TakeInfoOfStudent from './takeInfoOfStudent';
+import AlertDialog from './deleteCourses'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -34,7 +33,7 @@ export default function ShownAllCourses() {
   const history = useHistory();
   const classes = useStyles();
   const { courseList, loading, error } = useSelector((state) => state.courseReducer);
-  const { deleteCourse } = useSelector((state) => state.deleteCoursesAdminReducer)
+
 
   const dispatch = useDispatch();
 
@@ -43,18 +42,9 @@ export default function ShownAllCourses() {
     dispatch(getCourseList());
   }, []);
 
-  const deleteCourseAd = (values) => {
-    console.log(values)
-    console.log(typeof values)
-
-    dispatch(deleteCourseAdmin(values))
-  }
 
   console.log("Hello!!!");
-  if (deleteCourse) {
-    console.log(deleteCourse);
-    return <Redirect to="/admin/users" />
-  }
+
   return (
 
     <div className="container mt-3">
@@ -81,9 +71,10 @@ export default function ShownAllCourses() {
               <Button variant="outlined" size="small" color="primary" onClick={() => history.push(`/admin/updateCourses/${item.maKhoaHoc}`)} >
                 UPDATE
                       </Button>
-              <Button variant="contained" color="secondary" size="small" onClick={() => deleteCourseAd(item.maKhoaHoc)}>
+              {/* <Button variant="contained" color="secondary" size="small" onClick={() => deleteCourseAd(item.maKhoaHoc)}>
                 DELETE
-                      </Button>
+                      </Button> */}
+                      <AlertDialog idKhoaHoc={item.maKhoaHoc} />
               <Button variant="contained" color="primary" size="small"  onClick={() => history.push(`/admin/takeInfoOfStudent/${item.maKhoaHoc}`)} >
                 LẤY THÔNG TIN HỌC VIÊN
                       </Button>

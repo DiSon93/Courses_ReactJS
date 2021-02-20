@@ -34,7 +34,7 @@ export default function UserAccount() {
 
 
     return (
-        <div className="mt-5 mb-5 ml-4">
+        <div className="mt-5 mb-5 ml-4" style={{ backgroudColor: "green"}}>
             <h4 style={{color: "blue"}}>Khóa học của tôi: </h4>
             <hr />
             {userAccount.chiTietKhoaHocGhiDanh.map(item => {
