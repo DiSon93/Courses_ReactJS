@@ -4,6 +4,7 @@ import { getCourseInItem } from '../../redux/actions/courseItems';
 import Slider from "react-slick";
 
 
+
 export default function Courses() {
     const { courseItem, loading, error } = useSelector((state) => state.courseItemReducer);
 

@@ -10,7 +10,10 @@ import DigitalData from './Homepage/DigitalData';
 import Topcategogies from './Homepage/Topcategogies';
 import Comment from './Homepage/Comment';
 import Trategy from './Homepage/Trategy';
-import Footer from './Homepage/Footer'
+import Footer from './Homepage/Footer';
+
+import $ from "jquery";
+
 
 export default class Layout extends Component {
     render() {
