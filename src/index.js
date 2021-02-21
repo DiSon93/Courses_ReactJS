@@ -11,19 +11,24 @@ import rootReducer from './redux/reducers';
 
 // import anime from 'animejs/lib/anime.es.js';
 
-const enhanceCompose = compose (
+const enhanceCompose = compose(
   applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
+  // typeof window.__REDUX_DEVTOOLS_EXTENSION__ === "undefined"
+  //   ? a => a
+  //   : window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  //   window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 const store = createStore(
   rootReducer,
   enhanceCompose,
+  // applyMiddleware(thunk)
 
 )
 
 ReactDOM.render(
-  <Provider store ={ store }> 
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
