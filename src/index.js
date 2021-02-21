@@ -5,19 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { createStore, applyMiddleware, compose } from 'redux';
+// import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers';
+
 
 // import anime from 'animejs/lib/anime.es.js';
 
 const enhanceCompose = compose(
   applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
-  // typeof window.__REDUX_DEVTOOLS_EXTENSION__ === "undefined"
-  //   ? a => a
-  //   : window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  //   window.__REDUX_DEVTOOLS_EXTENSION__()
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
+  window.__REDUX_DEVTOOLS_EXTENSION__
+  ? window.__REDUX_DEVTOOLS_EXTENSION__()
+  : f => f
+ 
 );
 
 const store = createStore(
