@@ -37,12 +37,12 @@ function AdminRoute(props) {
                 return <Component {...props}/> //Lấy các props history, location, match
             }
             //Đã đăng nhập nhưng không là giảng viên
-            return <Redirect to="/" />
+            return <Redirect to="/coursesDetail" />
 
         }
         //Chưa đăng nhập
-        return <Redirect to="/login" />
-        // return <Component {...props}/>
+        // return <Redirect to="/login" />
+        return <Component {...props}/>
     }} />
     // }
 }
