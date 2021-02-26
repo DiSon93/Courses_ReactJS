@@ -41,8 +41,8 @@ function AdminRoute(props) {
 
         }
         //Chưa đăng nhập
-        // return <Redirect to="/login" />
-        return <Component {...props}/>
+        return <Redirect to="/login" />
+        // return <Component {...props}/>
     }} />
     // }
 }
