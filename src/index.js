@@ -12,7 +12,8 @@ import rootReducer from './redux/reducers';
 
 
 // import anime from 'animejs/lib/anime.es.js';
-
+// console.log(window.__REDUX_DEVTOOLS_EXTENSION__ )
+// console.log(window.__REDUX_DEVTOOLS_EXTENSION__() )
 const enhanceCompose = compose(
   applyMiddleware(thunk),
   // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
