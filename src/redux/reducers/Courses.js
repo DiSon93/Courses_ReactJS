@@ -19,16 +19,15 @@ const courseReducer = (state = initialState, action ) => {
             console.log("TT")
             return {...state, courseList: action.payload.data, loading: false}
         };
-        case 'GET_COURSE_LIST_FAIL' : {
+        case 'GET_COURSE_LIST_FAIL' : {   
+            console.log(action.payload.error)
             return {... state, loading: false, error: action.payload.error}
+            
         }
-
-
 
         default:
             return state;
     };
-
 
 }
 export default courseReducer

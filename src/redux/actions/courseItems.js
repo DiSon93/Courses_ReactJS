@@ -8,7 +8,7 @@ import axiosClient from '../../utils/axiosClient';
 export const getCourseInItem = (value) => {
     return (dispatch) => {
         dispatch({ type: GET_COURSE_ITEM_REQUEST});
-        axiosClient.get(`QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${value}&MaNhom=GP01`)
+        axiosClient.get(`QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${value}`)
         .then((result) => {
             dispatch({
                 type: GET_COURSE_ITEM_SUCCESS,
@@ -18,7 +18,7 @@ export const getCourseInItem = (value) => {
         .catch((error) => {
             dispatch({
                 type: GET_COURSE_ITEM_FAIL,
-                payload: {error: error.response.data }
+                payload: {error: error?.response?.data }
             })
         })
     }

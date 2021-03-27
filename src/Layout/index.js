@@ -14,7 +14,6 @@ import Footer from './Homepage/Footer';
 
 import $ from "jquery";
 
-
 export default class Layout extends Component {
     render() {
         return (
@@ -36,4 +35,4 @@ export default class Layout extends Component {
 
         )
     }
-}
+}    
