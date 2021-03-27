@@ -20,10 +20,10 @@ export const getCourseList = () => {
             });
             // console.log(result.data);
         }).catch((error) => {
-            // console.log("Kiểm tra lại")
+            console.log("Kiểm tra lại")
             dispatch({
                 type: GET_COURSE_LIST_FAIL,
-                payload: { error: error.data.message }
+                payload: { error: true}
             })
         })
     }

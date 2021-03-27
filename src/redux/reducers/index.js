@@ -13,7 +13,7 @@ import getCourseInfoReducer from './Admin/getCoursesInfo';
 import updateCourseReducer from './Admin/updateCourses';
 import deleteCoursesAdminReducer from './Admin/deleteCourses';
 import getStudentInfoByCourseReducer from './Admin/takeInfoOfStudent'
-
+import courseBycateReducer from './courseListByCate'
 const rootReducer = combineReducers ({
     courseReducer,
     loginReducer,
@@ -29,5 +29,6 @@ const rootReducer = combineReducers ({
     updateCourseReducer,
     deleteCoursesAdminReducer,
     getStudentInfoByCourseReducer,
+    courseBycateReducer
 })
 export default rootReducer;

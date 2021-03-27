@@ -5,7 +5,7 @@ import {
 } from '../constants/courses';
 
 const initialState = {
-    courseItem: [],
+    courseItem: {},
     loading: false,
     error: null
 }
